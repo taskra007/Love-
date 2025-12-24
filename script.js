@@ -48,3 +48,7 @@ setInterval(firework,600);
 document.getElementById("themeBtn").onclick=()=>{
   document.body.classList.toggle("light");
 };
+const snowScript=document.querySelector('script[src*="snow.js"]');
+document.getElementById("snowRange").oninput=e=>{
+  snowScript.setAttribute("flakes",e.target.value);
+};
