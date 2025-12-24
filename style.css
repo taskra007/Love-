@@ -100,3 +100,10 @@ button{
   height:100%;
   pointer-events:none;
 }
+.light{
+  background:#fff;
+}
+.light header,
+.light .content{
+  color:black;
+}
