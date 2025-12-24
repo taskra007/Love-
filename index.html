@@ -3,35 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Merry Christmas 🎄</title>
+<title>Christmas Wishes 🎄</title>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css">
-<script src="gsap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 
 <body>
 
-<header class="header">
-  <h2 class="logo">🎄 Christmas</h2>
-</header>
+<!-- Background Music -->
+<audio id="music" src="music.mp3" loop></audio>
 
-<section class="hero">
-  <img src="images/bg.jpg" class="bg">
-  <img src="images/santa.png" class="santa">
-  <img src="images/tree.png" class="tree">
-  <img src="images/gift.png" class="gift">
+<img class="bg" src="https://images.unsplash.com/photo-1543589077-47d81606c1bf">
 
-  <div class="content">
-    <h1>Merry Christmas</h1>
-    <p>May your days be merry, bright and full of love ✨</p>
-    <button>🎁 Spread Joy</button>
+<header>🎄 CHRISTMAS MAGIC 🎄</header>
+
+<section class="hero" id="parallax">
+  <img class="santa layer" data-speed="3"
+       src="https://pngimg.com/uploads/santa_claus/santa_claus_PNG38507.png">
+  <img class="tree layer" data-speed="1.5"
+       src="https://pngimg.com/uploads/christmas_tree/christmas_tree_PNG46.png">
+
+  <div class="content layer" data-speed="2">
+    <h1 id="wish">Merry Christmas</h1>
+    <p id="message">May your life sparkle with joy ✨</p>
+
+    <input id="nameInput" placeholder="Enter your name">
+    <button id="btn">🎁 Create Wish</button>
   </div>
 </section>
 
-<!-- Snow Effect -->
-<script src="https://app.embed.im/snow.js"></script>
+<canvas id="fireworks"></canvas>
 
-<script src="main.js"></script>
+<!-- Snow -->
+<script src="https://app.embed.im/snow.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
