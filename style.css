@@ -1,102 +1,102 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden;
-  background: #000;
+body{
+  font-family:'Poppins',sans-serif;
+  background:black;
+  overflow:hidden;
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px;
-  text-align: center;
-  z-index: 10;
+/* Background */
+.bg{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.35);
+  z-index:-1;
 }
 
-.logo {
-  color: #fff;
-  font-size: 24px;
-  letter-spacing: 2px;
+/* Header */
+header{
+  text-align:center;
+  padding:20px;
+  color:white;
+  letter-spacing:3px;
 }
 
-.hero {
-  height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Hero */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  text-align:center;
 }
 
-.bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.5);
+/* Images */
+.santa{
+  width:260px;
+  position:absolute;
+  bottom:80px;
+  left:-300px;
 }
 
-.santa {
-  position: absolute;
-  width: 280px;
-  bottom: 80px;
-  left: -300px;
+.tree{
+  width:220px;
+  position:absolute;
+  bottom:0;
+  right:40px;
 }
 
-.tree {
-  position: absolute;
-  width: 240px;
-  bottom: 0;
-  right: 50px;
+/* Content */
+.content{
+  color:white;
 }
 
-.gift {
-  position: absolute;
-  width: 120px;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:80px;
+  color:#ff3b3b;
+  text-shadow:0 0 30px red;
 }
 
-.content {
-  position: relative;
-  text-align: center;
-  color: white;
-  z-index: 2;
+p{
+  margin:15px 0;
 }
 
-.content h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 80px;
-  color: #ff3b3b;
-  text-shadow: 0 0 20px rgba(255,0,0,0.6);
+input{
+  padding:12px;
+  border-radius:30px;
+  border:none;
+  outline:none;
+  width:220px;
+  text-align:center;
 }
 
-.content p {
-  font-size: 20px;
-  margin: 20px 0;
+button{
+  margin-top:15px;
+  padding:14px 40px;
+  border:none;
+  border-radius:40px;
+  font-size:16px;
+  cursor:pointer;
+  background:linear-gradient(45deg,#ff0000,#ff8c00);
+  color:white;
+  box-shadow:0 0 20px red;
 }
 
-button {
-  padding: 14px 40px;
-  font-size: 18px;
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  background: linear-gradient(45deg, #ff0000, #ff6a00);
-  color: white;
-  box-shadow: 0 0 20px rgba(255,0,0,0.6);
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.1);
+/* Fireworks Canvas */
+#fireworks{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
 }
