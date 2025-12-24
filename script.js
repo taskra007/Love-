@@ -45,3 +45,6 @@ function firework(){
   }
 }
 setInterval(firework,600);
+document.getElementById("themeBtn").onclick=()=>{
+  document.body.classList.toggle("light");
+};
