@@ -1,42 +1,47 @@
+/* MUSIC AUTOPLAY */
+document.body.addEventListener("click",()=>{
+  document.getElementById("music").play();
+},{once:true});
 
-gsap.from(".content h1", {
-  y: 100,
-  opacity: 0,
-  duration: 1.5,
-  ease: "back.out(1.7)"
+/* PERSONAL WISH */
+document.getElementById("btn").onclick=()=>{
+  let name=document.getElementById("nameInput").value;
+  if(name){
+    document.getElementById("wish").innerText=`Merry Christmas ${name} 🎄`;
+    document.getElementById("message").innerText="Wishing you love, peace and happiness ❤️";
+  }
+};
+
+/* GSAP */
+gsap.from("h1",{y:100,opacity:0,duration:1.5});
+gsap.to(".santa",{x:window.innerWidth+400,duration:15,repeat:-1});
+
+/* 3D PARALLAX */
+document.addEventListener("mousemove",e=>{
+  document.querySelectorAll(".layer").forEach(layer=>{
+    let speed=layer.dataset.speed;
+    layer.style.transform=
+      `translate(${e.clientX*speed/200}px,${e.clientY*speed/200}px)`;
+  });
 });
 
-gsap.from(".content p", {
-  y: 50,
-  opacity: 0,
-  duration: 1,
-  delay: 0.5
-});
+/* FIREWORKS */
+const canvas=document.getElementById("fireworks");
+const ctx=canvas.getContext("2d");
+canvas.width=innerWidth;
+canvas.height=innerHeight;
 
-gsap.from("button", {
-  scale: 0,
-  duration: 1,
-  delay: 1
-});
-
-gsap.to(".santa", {
-  x: window.innerWidth + 400,
-  duration: 15,
-  repeat: -1,
-  ease: "linear"
-});
-
-gsap.from(".tree", {
-  y: 300,
-  opacity: 0,
-  duration: 1.5,
-  delay: 1
-});
-
-gsap.from(".gift", {
-  y: 100,
-  opacity: 0,
-  duration: 1,
-  delay: 1.8,
-  ease: "bounce.out"
-});
+function firework(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  for(let i=0;i<80;i++){
+    ctx.beginPath();
+    ctx.arc(
+      Math.random()*canvas.width,
+      Math.random()*canvas.height/2,
+      2,0,Math.PI*2
+    );
+    ctx.fillStyle=`hsl(${Math.random()*360},100%,60%)`;
+    ctx.fill();
+  }
+}
+setInterval(firework,600);
