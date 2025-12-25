@@ -32,3 +32,16 @@ function prev(){
 function sayYes(){
   document.getElementById("answer").innerText="💖 She said YES! 💖";
 }
+document.addEventListener("mousemove", e => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+  document.querySelector(".layer1").style.transform =
+    `translateZ(-200px) translate(${x}px,${y}px)`;
+
+  document.querySelector(".layer2").style.transform =
+    `translateZ(-100px) translate(${x*1.5}px,${y*1.5}px)`;
+
+  document.querySelector(".layer3").style.transform =
+    `translateZ(0) translate(${x*2}px,${y*2}px)`;
+});
