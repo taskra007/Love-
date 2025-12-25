@@ -107,3 +107,50 @@ button{
 .light .content{
   color:black;
 }
+/* Popup background */
+#popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+
+/* Popup box */
+.popup-box{
+  background:linear-gradient(135deg,#ff0000,#ff8c00);
+  padding:25px;
+  border-radius:22px;
+  text-align:center;
+  width:300px;
+  color:white;
+  position:relative;
+  animation:pop .6s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(0);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.popup-box img{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid white;
+  margin-bottom:15px;
+}
+
+#closePopup{
+  position:absolute;
+  top:10px;
+  right:15px;
+  cursor:pointer;
+  font-size:18px;
+}
