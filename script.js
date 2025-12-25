@@ -1,72 +1,34 @@
-/* MUSIC AUTOPLAY */
-document.body.addEventListener("click",()=>{
-  document.getElementById("music").play();
-},{once:true});
+/
+/* POPUP */
+const popup=document.getElementById("popup");
+const popupWish=document.getElementById("popupWish");
 
-/* PERSONAL WISH */
-document.getElementById("btn").onclick=()=>{
-  let name=document.getElementById("nameInput").value;
-  if(name){
-    document.getElementById("wish").innerText=`Merry Christmas ${name} 🎄`;
-    document.getElementById("message").innerText="Wishing you love, peace and happiness ❤️";
-  }
+document.getElementById("openWish").onclick=()=>{
+  const name=document.getElementById("nameInput").value;
+  const msg=document.getElementById("loveMsg").value;
+  popupWish.innerText=msg || `Merry Christmas ${name} ❤️`;
+  popup.style.display="flex";
 };
 
-/* GSAP */
-gsap.from("h1",{y:100,opacity:0,duration:1.5});
-gsap.to(".santa",{x:window.innerWidth+400,duration:15,repeat:-1});
-
-/* 3D PARALLAX */
-document.addEventListener("mousemove",e=>{
-  document.querySelectorAll(".layer").forEach(layer=>{
-    let speed=layer.dataset.speed;
-    layer.style.transform=
-      `translate(${e.clientX*speed/200}px,${e.clientY*speed/200}px)`;
-  });
-});
-
-/* FIREWORKS */
-const canvas=document.getElementById("fireworks");
-const ctx=canvas.getContext("2d");
-canvas.width=innerWidth;
-canvas.height=innerHeight;
-
-function firework(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  for(let i=0;i<80;i++){
-    ctx.beginPath();
-    ctx.arc(
-      Math.random()*canvas.width,
-      Math.random()*canvas.height/2,
-      2,0,Math.PI*2
-    );
-    ctx.fillStyle=`hsl(${Math.random()*360},100%,60%)`;
-    ctx.fill();
-  }
+function closePopup(){
+  popup.style.display="none";
 }
-setInterval(firework,600);
-document.getElementById("themeBtn").onclick=()=>{
-  document.body.classList.toggle("light");
-};
-const snowScript=document.querySelector('script[src*="snow.js"]');
-document.getElementById("snowRange").oninput=e=>{
-  snowScript.setAttribute("flakes",e.target.value);
-};
-const popup = document.getElementById("popup");
-const popupWish = document.getElementById("popupWish");
 
-document.getElementById("openWish").onclick = () => {
-  const name = document.getElementById("nameInput")?.value;
+/* SLIDER */
+const images=["mem1.jpg","mem2.jpg","mem3.jpg"];
+let i=0;
 
-  if(name){
-    popupWish.innerText = `Merry Christmas ${name} ❤️`;
-  }else{
-    popupWish.innerText = "Merry Christmas ❤️";
-  }
+function next(){
+  i=(i+1)%images.length;
+  document.getElementById("sliderImg").src=images[i];
+}
 
-  popup.style.display = "flex";
-};
+function prev(){
+  i=(i-1+images.length)%images.length;
+  document.getElementById("sliderImg").src=images[i];
+}
 
-document.getElementById("closePopup").onclick = () => {
-  popup.style.display = "none";
-};
+/* PROPOSAL */
+function sayYes(){
+  document.getElementById("answer").innerText="💖 She said YES! 💖";
+}
