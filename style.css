@@ -1,156 +1,71 @@
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
 body{
-  font-family:'Poppins',sans-serif;
+  margin:0;
   background:black;
-  overflow:hidden;
-}
-
-/* Background */
-.bg{
-  position:absolute;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(.35);
-  z-index:-1;
-}
-
-/* Header */
-header{
-  text-align:center;
-  padding:20px;
   color:white;
-  letter-spacing:3px;
-}
-
-/* Hero */
-.hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
+  font-family:Poppins,sans-serif;
   text-align:center;
-}
-
-/* Images */
-.santa{
-  width:260px;
-  position:absolute;
-  bottom:80px;
-  left:-300px;
-}
-
-.tree{
-  width:220px;
-  position:absolute;
-  bottom:0;
-  right:40px;
-}
-
-/* Content */
-.content{
-  color:white;
 }
 
 h1{
   font-family:'Great Vibes',cursive;
-  font-size:80px;
+  font-size:70px;
   color:#ff3b3b;
-  text-shadow:0 0 30px red;
+  margin-top:20px;
 }
 
-p{
-  margin:15px 0;
-}
-
-input{
+.box input,select{
   padding:12px;
+  margin:10px;
   border-radius:30px;
   border:none;
-  outline:none;
   width:220px;
   text-align:center;
 }
 
 button{
-  margin-top:15px;
-  padding:14px 40px;
+  padding:12px 35px;
   border:none;
-  border-radius:40px;
-  font-size:16px;
-  cursor:pointer;
-  background:linear-gradient(45deg,#ff0000,#ff8c00);
+  border-radius:30px;
+  background:linear-gradient(45deg,red,orange);
   color:white;
-  box-shadow:0 0 20px red;
+  cursor:pointer;
+  margin:10px;
 }
 
-/* Fireworks Canvas */
-#fireworks{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
+/* Slider */
+.slider img{
+  width:260px;
+  border-radius:20px;
+  margin-top:20px;
 }
-.light{
-  background:#fff;
+
+/* Proposal */
+.proposal{
+  margin-top:40px;
 }
-.light header,
-.light .content{
-  color:black;
+.no{
+  background:gray;
 }
-/* Popup background */
+
+/* Popup */
 #popup{
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   background:rgba(0,0,0,.85);
   display:none;
   align-items:center;
   justify-content:center;
-  z-index:999;
 }
 
-/* Popup box */
 .popup-box{
-  background:linear-gradient(135deg,#ff0000,#ff8c00);
+  background:linear-gradient(135deg,red,orange);
   padding:25px;
-  border-radius:22px;
-  text-align:center;
+  border-radius:20px;
   width:300px;
-  color:white;
-  position:relative;
-  animation:pop .6s ease;
-}
-
-@keyframes pop{
-  from{transform:scale(0);opacity:0}
-  to{transform:scale(1);opacity:1}
 }
 
 .popup-box img{
-  width:130px;
-  height:130px;
+  width:120px;
   border-radius:50%;
-  object-fit:cover;
   border:4px solid white;
-  margin-bottom:15px;
-}
-
-#closePopup{
-  position:absolute;
-  top:10px;
-  right:15px;
-  cursor:pointer;
-  font-size:18px;
 }
