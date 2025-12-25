@@ -52,3 +52,21 @@ const snowScript=document.querySelector('script[src*="snow.js"]');
 document.getElementById("snowRange").oninput=e=>{
   snowScript.setAttribute("flakes",e.target.value);
 };
+const popup = document.getElementById("popup");
+const popupWish = document.getElementById("popupWish");
+
+document.getElementById("openWish").onclick = () => {
+  const name = document.getElementById("nameInput")?.value;
+
+  if(name){
+    popupWish.innerText = `Merry Christmas ${name} ❤️`;
+  }else{
+    popupWish.innerText = "Merry Christmas ❤️";
+  }
+
+  popup.style.display = "flex";
+};
+
+document.getElementById("closePopup").onclick = () => {
+  popup.style.display = "none";
+};
