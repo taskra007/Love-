@@ -1,57 +1,58 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Christmas Wishes 🎄</title>
+<title>Love Wish ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 
 <body>
 
-<!-- Background Music -->
-<audio id="music" src="music.mp3" loop></audio>
+<h1>Merry Christmas ❤️</h1>
 
-<img class="bg" src="https://images.unsplash.com/photo-1543589077-47d81606c1bf">
+<div class="box">
+  <input id="nameInput" placeholder="Your Name ❤️">
 
-<header>🎄 CHRISTMAS MAGIC 🎄</header>
+  <select id="loveMsg">
+    <option value="">Choose Love Message</option>
+    <option>I love you forever ❤️</option>
+    <option>You are my everything 💖</option>
+    <option>You are my miracle ✨</option>
+  </select>
 
-<section class="hero" id="parallax">
-  <img class="santa layer" data-speed="3"
-       src="https://pngimg.com/uploads/santa_claus/santa_claus_PNG38507.png">
-  <img class="tree layer" data-speed="1.5"
-       src="https://pngimg.com/uploads/christmas_tree/christmas_tree_PNG46.png">
+  <button id="openWish">🎁 Open Wish</button>
+</div>
 
-  <div class="content layer" data-speed="2">
-    <h1 id="wish">Merry Christmas</h1>
-    <p id="message">May your life sparkle with joy ✨</p>
-
-    <input id="nameInput" placeholder="Enter your name">
-    <button id="btn">🎁 Create Wish</button>
+<!-- MEMORY SLIDER -->
+<div class="slider">
+  <img id="sliderImg" src="mem1.jpg">
+  <div>
+    <button onclick="prev()">◀</button>
+    <button onclick="next()">▶</button>
   </div>
-</section>
+</div>
 
-<canvas id="fireworks"></canvas>
-
-<!-- Snow -->
-<script src="https://app.embed.im/snow.js"></script>
-<script src="script.js"></script>
-<button id="themeBtn">🎨 Theme</button>
-  <input type="range" min="10" max="200" value="100" id="snowRange">
-  <button id="openWish">🎁 Open My Wish</button>
+<!-- PROPOSAL MODE -->
+<div class="proposal">
+  <h2>Will you be mine forever? 💍</h2>
+  <button onclick="sayYes()">YES ❤️</button>
+  <button class="no">NO 😅</button>
+  <p id="answer"></p>
+</div>
 
 <!-- POPUP -->
 <div id="popup">
   <div class="popup-box">
-    <span id="closePopup">✖</span>
-    <img src="myphoto.jpg" alt="My Photo">
-    <h2 id="popupWish">Merry Christmas</h2>
-    <p>🎄 Wishing you love & happiness 🎄</p>
+    <span onclick="closePopup()">✖</span>
+    <img src="myphoto.jpg">
+    <h2 id="popupWish"></h2>
+    <p>❤️ Always Yours ❤️</p>
   </div>
 </div>
+
+<script src="script.js"></script>
 </body>
 </html>
